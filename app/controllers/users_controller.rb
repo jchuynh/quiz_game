@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/new
+  # GET /users/newparam
   def new
     @user = User.new
   end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-
+    binding.pry
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: "User was successfully created." }

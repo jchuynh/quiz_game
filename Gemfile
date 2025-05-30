@@ -50,7 +50,12 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails', '~> 6.0.0'
+  gem "rspec-rails", "~> 6.0.0"
+
+  gem "awesome_print" # pretty print ruby objects
+  gem "pry" # Console with powerful introspection capabilities
+  gem "pry-byebug" # Integrates pry with byebug
+  gem "pry-doc" # Provide MRI Core documentation
 end
 
 group :development do
@@ -63,3 +68,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
