@@ -7,3 +7,24 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+User.find_or_create_by!(
+  [ {
+    name: 'John Smith',
+    username: 'johnsmith',
+    email: 'johnsmith@email.com'
+  },
+  {
+    name: 'Jane Smith',
+    username: 'janesmith',
+    email: 'janesmith@email.com'
+  } ],
+)
+
+Question.find_or_create_by!(
+  [ {
+    question: 'What is the capital of France?',
+    user_id: User.find_by(username: 'johnsmith').id
+  } ],
+)
