@@ -22,9 +22,16 @@ User.find_or_create_by!(
   } ],
 )
 
-Question.find_or_create_by!(
+questions = Question.find_or_create_by!(
   [ {
     question: 'What is the capital of France?',
     user_id: User.find_by(username: 'johnsmith').id
+  } ],
+)
+
+Answer.find_or_create_by!(
+  [ {
+    answer: 'Paris',
+    question_id: questions.first.id
   } ],
 )
